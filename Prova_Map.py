@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
-
+import plotly.graph_objects as go
 
 
 #simply plotting a map with no parameters
@@ -14,8 +14,6 @@ Needed = pd.read_csv(r"Case.csv", sep=";", decimal=",")
 #Needed.latitude = pd.to_numeric(Needed.latitude) 
 #Needed.longitude = pd.to_numeric(Needed.longitude) 
 dataframe = Needed.drop(["latitude","longitude","Riferimento","Prezzo_nome","Color","Indice"],axis=1)
-
-import plotly.graph_objects as go
 
 def create_link(url:str) -> str:
     return f'''<a href="{url}">🔗</a>'''
