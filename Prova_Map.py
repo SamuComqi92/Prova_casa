@@ -9,7 +9,7 @@ import pydeck as pdk
 #st.map()
 
 #creating a sample data consisting different points 
-Needed = pd.read_csv(r"C:\Users\campitiellsa\OneDrive - NTT Data EMEA\Desktop\Case.csv", sep=";", decimal=",")
+Needed = pd.read_csv(r"Case.csv", sep=";", decimal=",")
 
 #Needed.latitude = pd.to_numeric(Needed.latitude) 
 #Needed.longitude = pd.to_numeric(Needed.longitude) 
