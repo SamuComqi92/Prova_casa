@@ -2,16 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
-#import plotly as go #.graph_objects as go
 
-#simply plotting a map with no parameters
-#st.map()
-
-#creating a sample data consisting different points 
+#Data 
 Needed = pd.read_csv(r"Case.csv", sep=";", decimal=",")
-
-#Needed.latitude = pd.to_numeric(Needed.latitude) 
-#Needed.longitude = pd.to_numeric(Needed.longitude) 
 dataframe = Needed.drop(["latitude","longitude","Riferimento","Prezzo_nome","Color","Indice"],axis=1)
 
 def create_link(url:str) -> str:
@@ -19,56 +12,15 @@ def create_link(url:str) -> str:
 
 dataframe['Url'] = [create_link(url) for url in dataframe["Url"]]
 
+#Title
 "# Casa a Milano: Cercasi!"
 
-def make_clickable(link):
-    # target _blank to open new window
-    # extract clickable text to display for your link
-    text = link.split('=')[1]
-    return f'<a target="_blank" href="{link}">{text}</a>'
-
 # link is the column with hyperlinks
-#dataframe['link'] = dataframe['link'].apply(make_clickable)
 dataframe = dataframe.to_html(escape=False)
 st.write(dataframe, unsafe_allow_html=True)
 
-#fig = go.Figure(
-#    data=[
-#        go.Table(
-#            columnwidth = [0.5,0.5,2,0.7,0.7,1],
-#            header=dict(
-#                values=[f"<b>{i}</b>" for i in dataframe.columns.to_list()],
-#                fill_color='Blue',
-#                font=dict(color='white', size=10)
-#                ),
-#            cells=dict(
-#                values=dataframe.transpose()
-#                )
-#            )
-#        ]
-#    )
-#st.plotly_chart(fig, use_container_width=True)
-
-#Needed = dataframe.drop(["latitude","longitude","Riferimento"],axis=1)
-#st.write(Needed.to_html(escape=False, index=False), unsafe_allow_html=True)
-
-#plotting a map with the above defined points
-#st.map(Needed[["latitude","longitude","Color"]])
-
-gne = Needed[["Indice","latitude","longitude","Prezzo","Color","Riferimento"]]
 Locations = Needed[Needed.Riferimento==0]
 References = Needed[Needed.Riferimento==1]
-
-tooltip = {
-    "html":
-        "<b>Prezzo:</b> {Prezzo} <br/>",
-        #"<b>Rain:</b> {prec} mm<br/>",
-    "style": {
-        "backgroundColor": "steelblue",
-        "color": "black",
-    }
-}
-
 view_state = pdk.ViewState(latitude=45.46,longitude=9.18,zoom=10.5)
 tooltip = {
     "html":
@@ -77,8 +29,7 @@ tooltip = {
     "style": {
         "backgroundColor": "steelblue",
         "color": "black",
-    }
-}
+    }}
 
 slayer = pdk.Layer(
     type='ScatterplotLayer',
@@ -118,8 +69,6 @@ layert1 = pdk.Layer(
     sizeUnits='meters',
     get_color=[0, 0, 0],
     get_angle=0,
-    # Note that string constants in pydeck are explicitly passed as strings
-    # This distinguishes them from columns in a data set
     getTextAnchor= '"middle"',
     get_alignment_baseline='"bottom"'
 )
