@@ -17,7 +17,8 @@ dataframe['Url'] = [create_link(url) for url in dataframe["Url"]]
 
 # link is the column with hyperlinks
 dataframe = dataframe.to_html(escape=False)
-st.write(dataframe[dataframe.Riferimento==0], unsafe_allow_html=True)
+dataframe = dataframe[dataframe.Riferimento==0]
+st.write(dataframe, unsafe_allow_html=True)
 
 Locations = Needed[Needed.Riferimento==0]
 References = Needed[Needed.Riferimento==1]
