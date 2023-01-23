@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 #import plotly.graph_objects as go
-import plotly.express as go
 
 #simply plotting a map with no parameters
 #st.map()
@@ -22,22 +21,22 @@ dataframe['Url'] = [create_link(url) for url in dataframe["Url"]]
 
 "# Casa a Milano: Cercasi!"
 
-fig = go.Figure(
-    data=[
-        go.Table(
-            columnwidth = [0.5,0.5,2,0.7,0.7,1],
-            header=dict(
-                values=[f"<b>{i}</b>" for i in dataframe.columns.to_list()],
-                fill_color='Blue',
-                font=dict(color='white', size=10)
-                ),
-            cells=dict(
-                values=dataframe.transpose()
-                )
-            )
-        ]
-    )
-st.plotly_chart(fig, use_container_width=True)
+#fig = go.Figure(
+#    data=[
+#        go.Table(
+#            columnwidth = [0.5,0.5,2,0.7,0.7,1],
+#            header=dict(
+#                values=[f"<b>{i}</b>" for i in dataframe.columns.to_list()],
+#                fill_color='Blue',
+#                font=dict(color='white', size=10)
+#                ),
+#            cells=dict(
+#                values=dataframe.transpose()
+#                )
+#            )
+#        ]
+#    )
+#st.plotly_chart(fig, use_container_width=True)
 
 #Needed = dataframe.drop(["latitude","longitude","Riferimento"],axis=1)
 #st.write(Needed.to_html(escape=False, index=False), unsafe_allow_html=True)
