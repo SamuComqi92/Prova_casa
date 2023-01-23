@@ -5,8 +5,9 @@ import pydeck as pdk
 
 #Data 
 Needed = pd.read_csv(r"Case.csv", sep=";", decimal=",")
-dataframe = Needed.drop(["latitude","longitude","Riferimento","Prezzo_nome","Color","Indice"],axis=1)
+dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color","Indice"],axis=1)
 dataframe = dataframe[dataframe.Riferimento==0]
+dataframe = dataframe.drop("Riferimento", axis=1)
 
 def create_link(url:str) -> str:
     return f'''<a href="{url}">🔗</a>'''
