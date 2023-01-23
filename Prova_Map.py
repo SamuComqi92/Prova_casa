@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
-import plotly.graph_objects as go
+import plotly as go #.graph_objects as go
 
 #simply plotting a map with no parameters
 #st.map()
