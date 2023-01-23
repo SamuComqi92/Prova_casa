@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
-import plotly as go #.graph_objects as go
+#import plotly as go #.graph_objects as go
 
 #simply plotting a map with no parameters
 #st.map()
@@ -20,6 +20,17 @@ def create_link(url:str) -> str:
 dataframe['Url'] = [create_link(url) for url in dataframe["Url"]]
 
 "# Casa a Milano: Cercasi!"
+
+def make_clickable(link):
+    # target _blank to open new window
+    # extract clickable text to display for your link
+    text = link.split('=')[1]
+    return f'<a target="_blank" href="{link}">{text}</a>'
+
+# link is the column with hyperlinks
+#dataframe['link'] = dataframe['link'].apply(make_clickable)
+dataframe = dataframe.to_html(escape=False)
+st.write(dataframe, unsafe_allow_html=True)
 
 #fig = go.Figure(
 #    data=[
