@@ -13,7 +13,7 @@ Needed = pd.read_csv(r"C:\Users\campitiellsa\OneDrive - NTT Data EMEA\Desktop\Ca
 
 #Needed.latitude = pd.to_numeric(Needed.latitude) 
 #Needed.longitude = pd.to_numeric(Needed.longitude) 
-dataframe = Needed.drop(["latitude","longitude","Riferimento","Prezzo_nome","Color"],axis=1)
+dataframe = Needed.drop(["latitude","longitude","Riferimento","Prezzo_nome","Color","Indice"],axis=1)
 
 import plotly.graph_objects as go
 
