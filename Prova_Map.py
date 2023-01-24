@@ -5,6 +5,7 @@ import pydeck as pdk
 
 #Data 
 Needed = pd.read_csv(r"Case.csv", sep=";", decimal=",")
+Needed.Indice = Needed.Indice.astype(str)
 dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color"],axis=1)
 dataframe = dataframe[dataframe.Riferimento==0]
 dataframe = dataframe.drop("Riferimento", axis=1)
@@ -66,7 +67,7 @@ layert1 = pdk.Layer(
     data=Locations,
     pickable=True,
     get_position=["longitude", "latitude"],
-    get_text=Locations.Indice.astype(str),
+    get_text='Indice'
     billboard=False,
     get_size=20,
     #sizeUnits='meters',
