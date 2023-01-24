@@ -24,7 +24,7 @@ dataframe = dataframe.to_html(escape=False, index=False)
 #Order by
 Order = st.selectbox(
     'Come vuoi ordinare i dati?',
-     ["Locali","Metri quadri","Prezzo"],[""])
+     ("Locali","Metri quadri","Prezzo"))
 
 if Order == "Locali":
     Valore = 1
@@ -35,9 +35,6 @@ elif Order == "Metri quadri" :
 elif Order == "Prezzo" :
     Valore = 3
     dataframe = dataframe.sort_values(by=['Prezzo'])
-else :
-    Valore = 4
-    dataframe = dataframe
     
 st.write(dataframe, unsafe_allow_html=True)
 
