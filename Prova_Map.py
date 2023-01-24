@@ -75,15 +75,30 @@ layert1 = pdk.Layer(
     get_alignment_baseline='"bottom"'
 )
 
+layert2 = pdk.Layer(
+    "TextLayer",
+    Locations,
+    pickable=True,
+    get_position=["longitude", "latitude"],
+    get_text="Prezzo",
+    get_size=16,
+    get_color=[0, 0, 0],
+    get_angle=0,
+    # Note that string constants in pydeck are explicitly passed as strings
+    # This distinguishes them from columns in a data set
+    get_text_anchor=String("middle"),
+    get_alignment_baseline=String("center"),
+)
+
 pp = pdk.Deck(
     #map_style='mapbox://styles/mapbox/light-v9',
     initial_view_state=view_state,
-    map_provider='mapbox',
+    #map_provider='mapbox',
     map_style = 'dark', #, ‘dark’, ‘road’, ‘satellite’, ‘dark_no_labels’, and ‘light_no_labels’, a 
     layers=[
         #slayer,
         #slayer2,
-        layert1,
+        layert2,
     ],
     tooltip=tooltip
 )
