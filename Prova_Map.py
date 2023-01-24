@@ -81,8 +81,8 @@ pp = pdk.Deck(
     map_provider='mapbox',
     map_style = 'dark', #, ‘dark’, ‘road’, ‘satellite’, ‘dark_no_labels’, and ‘light_no_labels’, a 
     layers=[
-        slayer,
-        slayer2,
+        #slayer,
+        #slayer2,
         layert1,
     ],
     tooltip=tooltip
