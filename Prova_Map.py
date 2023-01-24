@@ -5,7 +5,7 @@ import pydeck as pdk
 
 #Data 
 Needed = pd.read_csv(r"Case.csv", sep=";", decimal=",")
-dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color","Indice"],axis=1)
+dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color"],axis=1)
 dataframe = dataframe[dataframe.Riferimento==0]
 dataframe = dataframe.drop("Riferimento", axis=1)
 
@@ -19,7 +19,7 @@ dataframe['Url'] = [create_link(url) for url in dataframe["Url"]]
 
 # link is the column with hyperlinks
 dataframe = dataframe.to_html(escape=False)
-st.write(dataframe, unsafe_allow_html=True)
+st.write(dataframe.style.hide_index(), unsafe_allow_html=True)
 
 Locations = Needed[Needed.Riferimento==0]
 References = Needed[Needed.Riferimento==1]
