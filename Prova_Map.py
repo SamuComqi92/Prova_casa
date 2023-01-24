@@ -6,7 +6,7 @@ import pydeck as pdk
 #Data 
 Needed = pd.read_csv(r"Case.csv", sep=";", decimal=",")
 Needed.Indice = Needed.Indice.astype(str)
-dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color","Indice"],axis=1)
+dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color"],axis=1)
 dataframe = dataframe[dataframe.Riferimento==0]
 dataframe = dataframe.drop("Riferimento", axis=1)
 
@@ -16,14 +16,10 @@ Order = st.selectbox(
      ("Locali","Metri quadri","Prezzo"))
 
 if Order == "Locali":
-    Valore = 1
     dataframe = dataframe.sort_values(by=['Locali'])
-    dataframe["Index"] = np.arange(1,len(dataframe))
 elif Order == "Metri quadri" :
-    Valore = 2
     dataframe = dataframe.sort_values(by=['Metri quadri'])
 elif Order == "Prezzo" :
-    Valore = 3
     dataframe = dataframe.sort_values(by=['Prezzo'])
     
 def create_link(url:str) -> str:
