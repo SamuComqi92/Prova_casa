@@ -66,7 +66,7 @@ layert1 = pdk.Layer(
     data=Locations,
     pickable=False,
     get_position=["longitude", "latitude"],
-    get_text='Indice',
+    get_text='Prezzo',
     #get_size=3000,
     #sizeUnits='meters',
     get_color=[0, 0, 0],
@@ -79,7 +79,7 @@ pp = pdk.Deck(
     #map_style='mapbox://styles/mapbox/light-v9',
     initial_view_state=view_state,
     map_provider='mapbox',
-    map_style = 'light', #, ‘dark’, ‘road’, ‘satellite’, ‘dark_no_labels’, and ‘light_no_labels’, a 
+    map_style = 'dark', #, ‘dark’, ‘road’, ‘satellite’, ‘dark_no_labels’, and ‘light_no_labels’, a 
     layers=[
         slayer,
         slayer2,
