@@ -71,10 +71,10 @@ layert1 = pdk.Layer(
     billboard=False,
     get_size=20,
     #sizeUnits='meters',
-    get_color=[0, 0, 0],
+    get_color=[255, 255, 255],
     get_angle=0,
     getTextAnchor= '"middle"',
-    get_alignment_baseline='"bottom"'
+    get_alignment_baseline='"center"'
 )
 
 pp = pdk.Deck(
