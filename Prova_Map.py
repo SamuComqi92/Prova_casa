@@ -10,17 +10,6 @@ dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color"],axis=1)
 dataframe = dataframe[dataframe.Riferimento==0]
 dataframe = dataframe.drop("Riferimento", axis=1)
 
-def create_link(url:str) -> str:
-    return f'''<a href="{url}">🔗</a>'''
-
-dataframe['Url'] = [create_link(url) for url in dataframe["Url"]]
-
-#Title
-"# Casa a Milano: Cercasi!"
-
-# link is the column with hyperlinks
-dataframe = dataframe.to_html(escape=False, index=False)
-
 #Order by
 Order = st.selectbox(
     'Come vuoi ordinare i dati?',
@@ -36,6 +25,16 @@ elif Order == "Prezzo" :
     Valore = 3
     dataframe = dataframe.sort_values(by=['Prezzo'])
     
+def create_link(url:str) -> str:
+    return f'''<a href="{url}">🔗</a>'''
+
+dataframe['Url'] = [create_link(url) for url in dataframe["Url"]]
+
+#Title
+"# Casa a Milano: Cercasi!"
+
+# link is the column with hyperlinks
+dataframe = dataframe.to_html(escape=False, index=False) 
 st.write(dataframe, unsafe_allow_html=True)
 
 Locations = Needed[Needed.Riferimento==0]
