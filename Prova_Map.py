@@ -79,7 +79,7 @@ pp = pdk.Deck(
     #map_style='mapbox://styles/mapbox/light-v9',
     initial_view_state=view_state,
     map_provider='mapbox',
-    map_style = 'light' #, ‘dark’, ‘road’, ‘satellite’, ‘dark_no_labels’, and ‘light_no_labels’, a 
+    map_style = 'light', #, ‘dark’, ‘road’, ‘satellite’, ‘dark_no_labels’, and ‘light_no_labels’, a 
     layers=[
         slayer,
         slayer2,
