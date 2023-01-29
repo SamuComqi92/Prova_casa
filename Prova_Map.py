@@ -9,6 +9,7 @@ Needed.Indice = Needed.Indice.astype(str)
 dataframe = Needed.drop(["latitude","longitude","Prezzo_nome","Color"],axis=1)
 dataframe = dataframe[dataframe.Riferimento==0]
 dataframe = dataframe.drop("Riferimento", axis=1)
+dataframe.Indice = dataframe.Indice.astype(int)
 
 #Order by
 Order = st.selectbox(
