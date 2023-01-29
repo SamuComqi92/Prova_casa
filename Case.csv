@@ -21,7 +21,11 @@
 22;2;50;via Privata Ambrogio De Marchi Gherini 2, Milano;45,510499;9,244658;150000;150000;https://www.idealista.it/immobile/26381878/;0;red
 23;2;46;via Monte Cengio 3, Milano;45,4315632;9,2420007;185000;185000;https://www.immobiliare.it/annunci/99640172/;0;red
 24;2;60;Via Lorenteggio 205, Milano;45,4472277;9,1366094;199000;199000;https://www.casa.it/immobili/45595635/;0;red
-25;1;10;Via Ernesto Calindri 4, Milano;45,442805;9,160414;0;NTT DATA;https://www.immobiliare.it/annunci/100114984/;1;green
-26;1;10;Passaggio Duomo 2, Milano;45,464098;9,189738;0;DUOMO;https://www.immobiliare.it/annunci/100114984/;1;green
-27;1;10;Stazione Centrale, Milano;45,484642;9,196683;0;STAZIONE CENTRALE;https://www.immobiliare.it/annunci/100114984/;1;green
-28;1;10;Via Giovanni Battista Cassinis 77, Milano;45,433992;9,235503;0;STAZIONE ROGOREDO;https://www.immobiliare.it/annunci/100114984/;1;green
+25;2;68;Via Bramantino 9, Milano; 45,4960603;9,1506152;195000;195000;https://www.casa.it/immobili/45900546/;0;red
+26;2;65;Via Enrico Cialdini 111, Milano; 45,5150691;9,1645413;199000;199000;https://www.casa.it/immobili/45600217/;0;red
+27;3:85,Via Giuseppe Tartini 7, Milano; 45,5040685;9,1740994;169000;169000;https://www.casa.it/immobili/45431170/;0;red
+
+28;1;10;Via Ernesto Calindri 4, Milano;45,442805;9,160414;0;NTT DATA;https://www.immobiliare.it/annunci/100114984/;1;green
+29;1;10;Passaggio Duomo 2, Milano;45,464098;9,189738;0;DUOMO;https://www.immobiliare.it/annunci/100114984/;1;green
+30;1;10;Stazione Centrale, Milano;45,484642;9,196683;0;STAZIONE CENTRALE;https://www.immobiliare.it/annunci/100114984/;1;green
+31;1;10;Via Giovanni Battista Cassinis 77, Milano;45,433992;9,235503;0;STAZIONE ROGOREDO;https://www.immobiliare.it/annunci/100114984/;1;green
