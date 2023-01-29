@@ -13,9 +13,11 @@ dataframe = dataframe.drop("Riferimento", axis=1)
 #Order by
 Order = st.selectbox(
     'Come vuoi ordinare i dati?',
-     ("Locali","Metri quadri","Prezzo"))
+     ("Indice","Locali","Metri quadri","Prezzo"))
 
-if Order == "Locali":
+if Order == "Indice":
+    dataframe = dataframe.sort_values(by=['Indice'])
+elif Order == "Locali":
     dataframe = dataframe.sort_values(by=['Locali'])
 elif Order == "Metri quadri" :
     dataframe = dataframe.sort_values(by=['Metri quadri'])
